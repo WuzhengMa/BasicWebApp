@@ -18,6 +18,7 @@ public class WebServer {
 
     Server server = new Server(portNumberToUse());
 
+
     ServletHandler handler = new ServletHandler();
     handler.addServletWithMapping(new ServletHolder(new Website()), "/*");
     handler.addServletWithMapping(new ServletHolder(new Api()), "/api/*");
