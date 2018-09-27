@@ -12,7 +12,7 @@ public class QueryProcessorTest {
 
     @Test
     public void returnsEmptyStringIfCannotProcessQuery() throws Exception {
-        assertThat(queryProcessor.process("test"), is(""));
+        assertThat(queryProcessor.process("test"), is("solution to everything"));
     }
 
     @Test
@@ -32,7 +32,12 @@ public class QueryProcessorTest {
 
     @Test
     public void knowsPlus() throws Exception {
-        assertThat(queryProcessor.process("what is 10 plus 15"), containsString("26"));
+        assertThat(queryProcessor.process("what is 10 plus 15"), containsString("25"));
+    }
+
+    @Test
+    public void knowsMultiply() throws Exception {
+        assertThat(queryProcessor.process("what is 10 multiplied by 15"), containsString("150"));
     }
 
     @Test
