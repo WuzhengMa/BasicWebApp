@@ -29,4 +29,9 @@ public class QueryProcessorTest {
     public void knowsAboutSteveJobs() throws Exception {
         assertThat(queryProcessor.process("steve jobs"), containsString("CEO"));
     }
+
+    @Test
+    public void knowsPlus() throws Exception {
+        assertThat(queryProcessor.process("plus"), containsString("add"));
+    }
 }
