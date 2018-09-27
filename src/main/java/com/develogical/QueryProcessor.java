@@ -1,6 +1,9 @@
 package com.develogical;
 
+import com.sun.tools.javac.util.ArrayUtils;
+
 import java.util.Arrays;
+import java.util.List;
 
 public class QueryProcessor {
 
@@ -19,6 +22,17 @@ public class QueryProcessor {
             if (query.toLowerCase().contains("plus")){
                 int i = Arrays.asList(splited).indexOf("plus");
                 return Integer.toString(Integer.parseInt(splited[i-1]) + Integer.parseInt(splited[i+1]));
+            }
+
+        }
+
+        if (query.toLowerCase().contains("which")){
+            if (query.toLowerCase().contains("largest:")){
+                String[] splited = query.split("largest:");
+                String[] splitedNumber = splited[1].split(",");
+                Arrays.sort(splitedNumber);
+
+                return splitedNumber[splitedNumber.length-1].trim();
             }
 
         }
