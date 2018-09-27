@@ -49,4 +49,9 @@ public class QueryProcessorTest {
     public void knowsSquareAndCube() throws Exception {
         assertThat(queryProcessor.process("which is square cube: 729, 27"), containsString("729"));
     }
+
+    @Test
+    public void knowsBanana() throws Exception {
+        assertThat(queryProcessor.process("color banana"), containsString("yellow"));
+    }
 }
