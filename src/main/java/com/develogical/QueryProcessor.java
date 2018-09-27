@@ -11,6 +11,6 @@ public class QueryProcessor {
         else if (query.toLowerCase().contains("steve jobs")){
             return "Steven Paul Jobs was an American entrepreneur and business magnate. He was the chairman, chief executive officer (CEO), and a co-founder of Apple Inc";
         }
-        return ""
+        return "";
     }
 }
