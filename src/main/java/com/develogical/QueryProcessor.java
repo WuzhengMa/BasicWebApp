@@ -32,8 +32,22 @@ public class QueryProcessor {
                 Arrays.sort(splitedNumber);
                 return splitedNumber[splitedNumber.length-1].trim();
             }
-
         }
+
+        if (query.toLowerCase().contains("cube:")){
+            String[] splited = query.split("cube:");
+            String[] splitedNumber = splited[1].split(",");
+
+            for(String each:splitedNumber){
+                each = each.trim();
+                double num = Math.sqrt(Integer.parseInt(each));
+                int numC = (int) Math.round(Math.pow(Integer.parseInt(each), 1.0/3.0));
+                if(Math.round(num)%num == 0 && Integer.parseInt(each) == numC * numC * numC){
+                    return Integer.toString(Integer.parseInt(each));
+                }
+            }
+        }
+
         return "solution to everything";
     }
 }
