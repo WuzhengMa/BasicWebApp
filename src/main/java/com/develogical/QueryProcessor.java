@@ -1,5 +1,7 @@
 package com.develogical;
 
+import java.util.Arrays;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -15,7 +17,8 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("what is")){
             String[] splited = query.split(" ");
             if (query.toLowerCase().contains("plus")){
-                return Integer.toString(Integer.parseInt(splited[2]) + Integer.parseInt(splited[4]));
+                int i = Arrays.asList(splited).indexOf("plus");
+                return Integer.toString(Integer.parseInt(splited[i-1]) + Integer.parseInt(splited[i+1]));
             }
 
         }

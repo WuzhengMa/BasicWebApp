@@ -32,6 +32,6 @@ public class QueryProcessorTest {
 
     @Test
     public void knowsPlus() throws Exception {
-        assertThat(queryProcessor.process("what is 1 plus 0"), containsString("1"));
+        assertThat(queryProcessor.process("what is 10 plus 15"), containsString("26"));
     }
 }
