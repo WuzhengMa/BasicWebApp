@@ -12,9 +12,13 @@ public class QueryProcessor {
             return "Steven Paul Jobs was an American entrepreneur and business magnate. He was the chairman, chief executive officer (CEO), and a co-founder of Apple Inc";
         }
 
-        if (query.toLowerCase().contains("plus")){
-            return "add up things";
+        if (query.toLowerCase().contains("what is")){
+            String[] splited = query.split(" ");
+            if (query.toLowerCase().contains("plus")){
+                return Integer.toString(Integer.parseInt(splited[2]) + Integer.parseInt(splited[4]));
+            }
+
         }
-        return "";
+        return "solution to everything";
     }
 }
